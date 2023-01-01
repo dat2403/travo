@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travo/core/constants/color_constants.dart';
 import 'package:travo/core/constants/dimension_constants.dart';
-import 'package:travo/core/constants/text_style_constant.dart';
 import 'package:travo/core/helper/asset_helper.dart';
 import 'package:travo/core/helper/image_helper.dart';
 
@@ -39,17 +38,22 @@ class AppBarContainer extends StatelessWidget {
                   Row(
                     children: [
                       if (implementLeading)
-                        Container(
-                          padding: const EdgeInsets.all(AppDimension.kItemPadding),
-                          decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(AppDimension.kDefaultPadding),
-                              ),
-                              color: Colors.white),
-                          child: const Icon(
-                            FontAwesomeIcons.arrowLeft,
-                            color: Colors.blueGrey,
-                            size: AppDimension.kDefaultIconSize,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.of(context).pop();
+                          },
+                          child: Container(
+                            padding: const EdgeInsets.all(AppDimension.kItemPadding),
+                            decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(AppDimension.kDefaultPadding),
+                                ),
+                                color: Colors.white),
+                            child: const Icon(
+                              FontAwesomeIcons.arrowLeft,
+                              color: Colors.blueGrey,
+                              size: AppDimension.kDefaultIconSize,
+                            ),
                           ),
                         ),
                       Expanded(
